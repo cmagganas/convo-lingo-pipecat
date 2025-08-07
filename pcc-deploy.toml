@@ -1,0 +1,6 @@
+agent_name = "convo-lingo-v0"
+image = "cmagganas/convo-lingo-v0:0.1"
+secret_set = "convo-lingo-v0-secrets"
+
+[scaling]
+	min_agents = 0 

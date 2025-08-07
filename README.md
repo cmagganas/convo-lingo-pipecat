@@ -1,6 +1,6 @@
-# Phone Bot Twilio
+# ConvoLingo - AI Language Learning Phone Bot
 
-Learn how to connect your Pipecat bot to a phone number so users can call and have voice conversations. This example shows the complete setup for telephone-based AI interactions using Twilio's telephony services. At the end, you'll be able to talk to your bot on the phone.
+Learn how to connect your ConvoLingo AI language learning assistant to a phone number so users can call and practice languages through voice conversations. This example shows the complete setup for telephone-based AI language learning using Twilio's telephony services. At the end, you'll have a fully functional language learning assistant that users can call to practice languages, learn grammar, expand vocabulary, and explore cultures.
 
 ## Prerequisites
 
@@ -48,7 +48,8 @@ cd pipecat-quickstart-phone-bot
      cp templates/streams.xml.template templates/streams.xml
      ```
    - In `templates/streams.xml`, replace `<your_server_url>` with your ngrok URL (without `https://`)
-   - The final URL should look like: `wss://abc123.ngrok.io/ws`
+   - The final URL should look like: `wss://abc123.ngrok.io/ws?language={{flow.variables.caller_language}}`
+   - This template automatically passes the selected language from the Twilio Call Flow to the bot
 
 ### Terminal 2: Server Setup
 
@@ -106,10 +107,47 @@ cd pipecat-quickstart-phone-bot
 ## Understanding the Call Flow
 
 1. **Incoming Call**: User dials your Twilio number
-2. **Webhook**: Twilio sends call data to your ngrok URL
-3. **WebSocket**: Your server establishes real-time audio connection via Websocket and exchanges Media Streams with Twilio
-4. **Processing**: Audio flows through your Pipecat Pipeline
-5. **Response**: Synthesized speech streams back to caller
+2. **Language Selection**: Twilio Call Flow prompts user to select their preferred language for learning (English, Spanish, German, Greek, or Japanese)
+3. **Webhook**: Twilio sends call data to your ngrok URL
+4. **WebSocket**: Your server establishes real-time audio connection via Websocket and exchanges Media Streams with Twilio
+5. **Language Processing**: The bot receives the selected language and configures ConvoLingo to focus on that language
+6. **Processing**: Audio flows through your Pipecat Pipeline with language learning system prompts
+7. **Response**: ConvoLingo responds with language learning assistance in the selected language
+
+## Language Learning Features
+
+ConvoLingo is a comprehensive AI language learning assistant that helps students:
+
+### **Conversation Practice**
+- Engage in natural dialogue practice
+- Role-play real-world scenarios
+- Practice speaking with confidence
+
+### **Grammar Learning**
+- Get clear explanations of grammar rules
+- Practice grammar in context
+- Receive instant feedback on grammar usage
+
+### **Vocabulary Building**
+- Learn topic-specific vocabulary
+- Understand word usage and context
+- Practice new words in sentences
+
+### **Cultural Insights**
+- Learn about customs and traditions
+- Explore cultural nuances
+- Understand cultural context for language use
+
+## Supported Languages
+
+ConvoLingo supports learning in multiple languages:
+- **English**: Practice English conversation, grammar, and vocabulary
+- **Spanish**: Learn Spanish with cultural insights from Spanish-speaking countries
+- **German**: Master German grammar and vocabulary with cultural context
+- **Greek**: Explore Greek language and culture
+- **Japanese**: Learn Japanese with cultural understanding
+
+The language selection is passed from the Twilio Call Flow to ConvoLingo via the websocket URL parameters, allowing for personalized language learning experiences.
 
 ## Next Steps
 
