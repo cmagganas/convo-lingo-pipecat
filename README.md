@@ -234,6 +234,13 @@ ConvoLingo supports learning in multiple languages:
 
 The language selection is passed from the Twilio Call Flow to ConvoLingo via the websocket URL parameters, allowing for personalized language learning experiences.
 
+> **⚠️ Current Implementation Note**: At this time, the language selector only captures the user's preference but doesn't significantly alter the experience. The current British lady TTS voice is optimized for English and may not provide optimal pronunciation for other languages. Future versions will implement:
+> 
+> 1. **Language-specific conversation starters** - "You chose Spanish, let's practice Spanish together..."
+> 2. **Multilingual TTS voices** - Language-appropriate voices for proper pronunciation
+> 3. **Structured course format** - Chapter and lesson-based learning progression
+> 4. **Smart text-to-speech** - Avoid reading pronunciation guides and special characters aloud
+
 <details>
 <summary><strong>🔧 Troubleshooting</strong></summary>
 
