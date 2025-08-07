@@ -6,24 +6,8 @@ Learn how to connect your ConvoLingo AI language learning assistant to a phone n
 
 This project supports two deployment methods:
 
-1. **Local Development** - Using ngrok for testing and development
-2. **Pipecat Cloud** - Production deployment on Pipecat Cloud infrastructure
-
-## Prerequisites
-
-- Python 3.10+
-- [Twilio Account](https://www.twilio.com/login) and [phone number](https://help.twilio.com/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console)
-- AI Service API keys for: [Deepgram](https://console.deepgram.com/signup), [OpenAI](https://auth.openai.com/create-account), and [Cartesia](https://play.cartesia.ai/sign-up)
-
-**For Local Development:**
-- [ngrok](https://ngrok.com/docs/getting-started/) (for tunneling)
-
-**For Pipecat Cloud:**
-- [Pipecat Cloud Account](https://pipecat.daily.co/)
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Hub Account](https://hub.docker.com/)
-
-## 🏠 **Local Development Setup**
+<details>
+<summary><strong>🏠 Local Development</strong> - Using ngrok for testing and development</summary>
 
 This method is perfect for testing and development.
 
@@ -109,7 +93,10 @@ cd convo-lingo-pipecat
 
 **Call your Twilio phone number** to start talking with your AI bot! 🚀
 
-## ☁️ **Pipecat Cloud Deployment**
+</details>
+
+<details>
+<summary><strong>☁️ Pipecat Cloud</strong> - Production deployment on Pipecat Cloud infrastructure</summary>
 
 This method is ideal for production deployment with automatic scaling and management.
 
@@ -196,6 +183,22 @@ pcc agent status convo-lingo-v0
 pcc agent logs convo-lingo-v0
 ```
 
+</details>
+
+## Prerequisites
+
+- Python 3.10+
+- [Twilio Account](https://www.twilio.com/login) and [phone number](https://help.twilio.com/articles/223135247-How-to-Search-for-and-Buy-a-Twilio-Phone-Number-from-Console)
+- AI Service API keys for: [Deepgram](https://console.deepgram.com/signup), [OpenAI](https://auth.openai.com/create-account), and [Cartesia](https://play.cartesia.ai/sign-up)
+
+**For Local Development:**
+- [ngrok](https://ngrok.com/docs/getting-started/) (for tunneling)
+
+**For Pipecat Cloud:**
+- [Pipecat Cloud Account](https://pipecat.daily.co/)
+- [Docker](https://docs.docker.com/get-docker/)
+- [Docker Hub Account](https://hub.docker.com/)
+
 ## 🎯 **Language Learning Features**
 
 ConvoLingo is a comprehensive AI language learning assistant that helps students:
@@ -231,7 +234,8 @@ ConvoLingo supports learning in multiple languages:
 
 The language selection is passed from the Twilio Call Flow to ConvoLingo via the websocket URL parameters, allowing for personalized language learning experiences.
 
-## 🔧 **Troubleshooting**
+<details>
+<summary><strong>🔧 Troubleshooting</strong></summary>
 
 ### Local Development Issues
 - **Call doesn't connect**: Verify your ngrok URL is correctly set in both Twilio webhook and `streams.xml`
@@ -245,7 +249,10 @@ The language selection is passed from the Twilio Call Flow to ConvoLingo via the
 - **Cold starts**: Scale to minimum 1 agent to avoid cold start delays
 - **Connection issues**: Verify TwiML configuration matches your organization name
 
-## 📈 **Project Status**
+</details>
+
+<details>
+<summary><strong>📈 Project Status</strong></summary>
 
 **✅ Successfully Deployed and Functional**
 
@@ -262,6 +269,8 @@ The language selection is passed from the Twilio Call Flow to ConvoLingo via the
 3. **User Progress Tracking** - Save learning progress and preferences
 4. **Conversation Flow** - Smoother transitions and natural dialogue
 5. **IVR Integration** - Proper language selection handling
+
+</details>
 
 ## 📚 **Next Steps**
 
